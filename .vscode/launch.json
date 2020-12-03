@@ -2,6 +2,8 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    //Reference for Prefined variables
+    // https://code.visualstudio.com/docs/editor/variables-reference
     "version": "0.2.0",
     "configurations": [
         {
@@ -10,6 +12,19 @@
             "name": "Launch Chrome against heroku app",
             "url": "https://the-internet.herokuapp.com",
             "webRoot": "${workspaceFolder}"
-        }
+        },
+        {
+            "name": "run select spec",
+            "type": "node",
+            "request": "launch",
+            "args": ["wdio.conf.cjs", "--spec", "${file}"],
+            "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": true,
+            "program": "${workspaceRoot}/node_modules/@wdio/cli/bin/wdio.js",
+            "console": "integratedTerminal",
+            "env": {
+                "DEBUG": "true"
+            }
+        },
     ]
 }

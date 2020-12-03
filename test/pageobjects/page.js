@@ -8,7 +8,16 @@ export default class Page {
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     open(path) {
-        //return browser.url(`https://the-internet.herokuapp.com/${path}`)
+        //baseUrl is specified in the wdio config
+        //file :https://the-internet.herokuapp.com
         return browser.url(`/${path}`)  
+    }
+    /**
+    * Opens the absoulute url of a pageassuming
+    * starts with known protocol i.e. https
+    * @param url url of the page
+    */
+    get(url) {
+        return browser.url(url)
     }
 }
