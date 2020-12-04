@@ -24,7 +24,13 @@ exports.config = {
         // 'path/to/excluded/files'
     ],
     //
-    // ============
+    // ==================
+    // Sync vs Async mode
+    // ==================
+    // Running in 'sync' mode requires that @wdio/sync package is install
+    // To revert to 'async' mode uninstall the sync package
+    // https://webdriver.io/docs/sync-vs-async.html
+    //
     // Capabilities
     // ============
     // Define your capabilities here. WebdriverIO can run multiple capabilities at the same

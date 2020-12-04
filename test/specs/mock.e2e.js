@@ -17,7 +17,7 @@ describe('My mocked response', () => {
         
         await browser.url(`https://todobackend.com/client/index.html?${todoBackendAppUrl}`)
     
-        await (await browser.$('#todo-list li')).waitForExist({ timeout: 20000, interval: 1000 })        
+        await (await browser.$('#todo-list li')).waitForExist({ timeout: 20000, interval: 1000 })
         let listItems = (await Promise.all((await browser.$$('#todo-list li'))))
 
         await expect(listItems[0]).toHaveText(notCompletedTodo);
