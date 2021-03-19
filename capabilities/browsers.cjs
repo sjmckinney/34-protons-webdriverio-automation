@@ -12,7 +12,7 @@ const desktop = {
     "maxInstances": 2,
     "browserName": "chrome",
     "goog:chromeOptions": {
-       "args": [ "--incognito" ]
+       "args": [ "--incognito", "--no-sandbox"]
     }
  };
  
