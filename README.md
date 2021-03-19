@@ -23,3 +23,9 @@ npm test -- --spec ./test/specs/example.e2e.js
 ```
 npm test -- --spec ./test/specs/*.e2e.js
 ```
+
+#### Upgrade Chromedriver and Geckodriver binaries
+
+```
+npm install chromedriver --chromedriver_version=LATEST
+```
