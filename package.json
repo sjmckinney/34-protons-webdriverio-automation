@@ -18,7 +18,7 @@
     "@wdio/mocha-framework": "^6.11.0",
     "@wdio/spec-reporter": "^6.11.0",
     "@wdio/sync": "^6.11.0",
-    "chromedriver": "^87.0.7",
+    "chromedriver": "^89.0.0",
     "geckodriver": "^1.22.1",
     "got": "^11.8.1",
     "wdio-chromedriver-service": "^6.0.4",
