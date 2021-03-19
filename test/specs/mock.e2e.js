@@ -1,4 +1,4 @@
-describe('My mocked response', () => {
+xdescribe('My mocked response', () => {
     it('Mock should return canned todo items', async () => {
         const todoBackendAppUrl = 'https://todo-backend-express-knex.herokuapp.com/'
         const mock = await browser.mock(todoBackendAppUrl)

@@ -17,6 +17,8 @@
             "name": "run select spec",
             "type": "node",
             "request": "launch",
+            "port": 5859,
+            "timeout": 60000,
             "args": ["wdio.conf.cjs", "--spec", "${file}"],
             "cwd": "${workspaceFolder}",
             "autoAttachChildProcesses": true,

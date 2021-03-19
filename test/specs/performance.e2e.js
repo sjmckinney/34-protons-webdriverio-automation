@@ -1,5 +1,7 @@
 import assert from 'assert'
 
+//Not currently working due to version of @wdio/devtools-service
+
 xdescribe('JSON.org page', () => {
     before(() => {
         browser.enablePerformanceAudits()

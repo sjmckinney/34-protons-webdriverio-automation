@@ -1,5 +1,11 @@
+const browsers = require('./capabilities/browsers.cjs');
+
 exports.config = {
-    //
+    // ====================
+    // Debug Configuration
+    // ====================
+    // debug: true,
+    //execArgv: ['--inspect-brk=127.0.0.1:5859'],
     // ====================
     // Runner Configuration
     // ====================
@@ -52,24 +58,21 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [
-        {
-    
-        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-        // grid with only 5 firefox instances available you can make sure that not more than
-        // 5 instances get started at a time.
-        maxInstances: 5,
-        //
-        browserName: 'chrome',
-        acceptInsecureCerts: true
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
-    },
-    {
-        maxInstances: 5,
-        browserName: 'firefox',
-    }
+        browsers.chrome,
+        //browsers.firefox
+        // {
+        // // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+        // // grid with only 5 firefox instances available you can make sure that not more than
+        // // 5 instances get started at a time.
+        // maxInstances: 5,
+        // //
+        // browserName: 'chrome',
+        // acceptInsecureCerts: true
+        // // If outputDir is provided WebdriverIO can capture driver session logs
+        // // it is possible to configure which logTypes to include/exclude.
+        // // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+        // // excludeDriverLogs: ['bugreport', 'server'],
+        // },
     ],
     //
     // ===================
@@ -105,7 +108,8 @@ exports.config = {
     baseUrl: 'https://the-internet.herokuapp.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 20000,
+    //waitforTimeout: 20000,
+    waitforTimeout: 2000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -129,21 +133,16 @@ exports.config = {
     framework: 'mocha',
     //
     // The number of times to retry the entire specfile when it fails as a whole
-    // specFileRetries: 1,
-    //
+    specFileRetries: 4,
     // Delay in seconds between the spec file retry attempts
-    // specFileRetriesDelay: 0,
-    //
+    specFileRetriesDelay: 0,
     // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
-    // specFileRetriesDeferred: false,
+    specFileRetriesDeferred: false,
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
     reporters: ['spec'],
-
-
-    
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -151,7 +150,8 @@ exports.config = {
         // Babel setup
         //require: ['@babel/register'],
         ui: 'bdd',
-        timeout: 100000
+        timeout: 100000,
+        //retries: 4
     },
     //
     // =====
