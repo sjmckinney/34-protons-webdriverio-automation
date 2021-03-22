@@ -19,7 +19,8 @@ services:
         container_name: selenium-hub
         expose:
             - 4444
-    chrome:
+
+    chrome-node:
         image: selenium/node-chrome:3.141.59
         volumes:
             - /dev/shm:/dev/shm
