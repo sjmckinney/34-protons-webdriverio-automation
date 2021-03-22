@@ -1,31 +1,31 @@
 version: "3"
 services:
-    34-protons-tests:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        command: dockerize -wait tcp://selenium-hub:4444 -timeout 10s -wait-retry-interval 1s bash -c "npm run test"
-        tty: true
-        volumes:
-            - .:/app
-        depends_on:
-            - selenium-hub
-        environment:
-            - HUB_HOST=selenium-hub
-            - HUB_PORT=4444
+  34-protons-tests:
+  build:
+    context: .
+    dockerfile: Dockerfile
+  command: dockerize -wait tcp://selenium-hub:4444 -timeout 10s -wait-retry-interval 1s bash -c "npm run test"
+  tty: true
+  volumes:
+    - .:/app
+  depends_on:
+    - selenium-hub
+  environment:
+    - HUB_HOST=selenium-hub
+    - HUB_PORT=4444
 
-    selenium-hub:
-        image: selenium/hub:3.141.59
-        container_name: selenium-hub
-        expose:
-            - 4444
+  selenium-hub:
+    image: selenium/hub:3.141.59
+    container_name: selenium-hub
+    expose:
+      - 4444
 
-    chrome-node:
-        image: selenium/node-chrome:3.141.59
-        volumes:
-            - /dev/shm:/dev/shm
-        depends_on:
-            - selenium-hub
-        environment:
-            - HUB_HOST=selenium-hub
-            - HUB_PORT=4444
+  chrome-node:
+    image: selenium/node-chrome:3.141.59
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
