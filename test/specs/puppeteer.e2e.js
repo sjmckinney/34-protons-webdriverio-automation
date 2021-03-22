@@ -1,4 +1,4 @@
-describe('my e2e tests', () => {
+xdescribe('my e2e tests', () => {
     // ...
 
     it('replaces the WebdriverIO logo with the Puppeteer logo', () => {
