@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio wdio.conf.cjs",
-    "firefox-only": "npx wdio firefox.conf.cjs"
+    "test": "wdio wdio.conf.cjs",
+    "firefox-only": "wdio firefox.conf.cjs"
   },
   "keywords": [],
   "author": "",
