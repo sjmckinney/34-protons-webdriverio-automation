@@ -1,29 +1,31 @@
-import assert from 'assert'
+//import assert from 'assert'
 
-//Not currently working due to version of @wdio/devtools-service
-
-xdescribe('JSON.org page', () => {
+describe('Website page', () => {
     before(() => {
         browser.enablePerformanceAudits()
     })
 
-    xit('should load within performance budget', () => {
+    it('should load within performance budget', () => {
 
-        browser.url('http://json.org')
+        browser.url('https://magnificent-cabbage.glitch.me/')
 
         let metrics = browser.getMetrics()
         console.log(`metrics.speedIndex: ${metrics.speedIndex}`)
-        assert.ok(metrics.speedIndex < 1500) // check that speedIndex is below 1.5ms
+        //assert.ok(metrics.speedIndex < 3000) // check that speedIndex is below 1.5ms
 
         let score = browser.getPerformanceScore() // get Lighthouse Performance score
-        assert.ok(score >= .99) // Lighthouse Performance score is at 99% or higher
+        console.log(`Lighthouse performance score: ${score}`);
+        //assert.ok(score >= .99) // Lighthouse Performance score is at 99% or higher
 
-        $('=Esperanto').click()
+        $("a[href='/fesh']").click()
 
         metrics = browser.getMetrics()
-        assert.ok(metrics.speedIndex < 1500)
-        score = browser.getPerformanceScore()
-        assert.ok(score >= .99)
+        console.log(`metrics.speedIndex: ${metrics.speedIndex}`)
+        //assert.ok(metrics.speedIndex < 3000) // check that speedIndex is below 1.5ms
+
+        score = browser.getPerformanceScore() // get Lighthouse Performance score
+        console.log(`Lighthouse performance score: ${score}`);
+        //assert.ok(score >= .99) // Lighthouse Performance score is at 99% or higher
     })
 
     after(() => {

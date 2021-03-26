@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx wdio wdio.conf.cjs",
-    "firefox-only": "npx wdio firefox.conf.cjs"
+    "firefox-only": "npx wdio firefox.conf.cjs",
+    "performance": "npx wdio perf.conf.cjs --spec ./test/specs/performance.e2e.js"
   },
   "keywords": [],
   "author": "",

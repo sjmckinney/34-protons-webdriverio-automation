@@ -12,7 +12,8 @@ const desktop = {
     "maxInstances": 2,
     "browserName": "chrome",
     "goog:chromeOptions": {
-       "args": [ "--incognito", "--no-sandbox", "--headless", "--disable-gpu"]
+       //"args": [ "--incognito", "--no-sandbox", "--headless", "--disable-gpu"]
+       "args": [ "--incognito", "--no-sandbox"]
     }
  };
  
